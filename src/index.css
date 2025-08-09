@@ -1,13 +1,71 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-size: 1.3rem;
+}
+.app-container {
+  max-width: 1200px;
+  height: 100vh;
+  margin: 2rem auto;
+  background-color: red;
+  text-align: center;
+}
+.output-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: rgb(255, 255, 255);
+  min-height: 10rem;
+}
+.output-field p {
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+
+.operation {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.box1 {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.number-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.3rem;
+}
+.number-item {
+  padding: 0.5rem;
+  background-color: aqua;
+}
+.operand {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.3rem;
+}
+.operand-item {
+  font-weight: 900;
+  padding: 0.3rem;
+  background-color: rgb(82, 223, 82);
+  text-align: center;
+}
+.helper-container {
+  display: flex;
+  gap: 0.3rem;
+  background-color: blueviolet;
+  padding: 0.5rem;
+}
+button {
+  padding: 10px 20px;
 }
