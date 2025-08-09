@@ -11,7 +11,7 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "value/selected":
-      if (state.output) return { ...state };
+      if (state.output !== null) return state;
       if (state.operand)
         return {
           ...state,
@@ -31,23 +31,27 @@ function reducer(state, action) {
           output: null,
           operand: action.payload,
         };
-      if (!state.value1 || state.value2) return;
+      if (!state.value1 || state.value2) return state;
       return {
         ...state,
         operand: action.payload,
       };
 
     case "operation/selected":
-      if (!state.value1 || !state.value2 || !state.operand) return { ...state };
-      if (state.operand === "+")
-        return { ...state, output: +state.value1 + +state.value2 };
-      if (state.operand === "/")
-        return { ...state, output: +state.value1 / +state.value2 };
-      if (state.operand === "*")
-        return { ...state, output: +state.value1 * +state.value2 };
-      if (state.operand === "-")
-        return { ...state, output: +state.value1 - +state.value2 };
-      return;
+      if (!state.value1 || !state.value2 || !state.operand) return state;
+
+      const ops = {
+        "+": (a, b) => a + b,
+        "-": (a, b) => a - b,
+        "*": (a, b) => a * b,
+        "/": (a, b) => a / b,
+      };
+
+      const calc = ops[state.operand];
+      return {
+        ...state,
+        output: calc(+state.value1, +state.value2),
+      };
 
     case "delete/selected":
       if (state.output) return { ...state };
