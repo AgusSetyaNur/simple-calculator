@@ -6,7 +6,11 @@ function NumberInput() {
   return (
     <div className="number-input">
       {number.map((val) => (
-        <div className="number-item" onClick={() => handleValue(val)} key={val}>
+        <div
+          className={`number-item item-${val === "." ? "dot" : val}`}
+          onClick={() => handleValue(val)}
+          key={val}
+        >
           {val}
         </div>
       ))}

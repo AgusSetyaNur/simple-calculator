@@ -12,6 +12,7 @@ function reducer(state, action) {
   switch (action.type) {
     case "value/selected":
       if (state.output !== null) return state;
+      if (action.payload === "." && !state.value1) return state;
       if (state.operand)
         return {
           ...state,
