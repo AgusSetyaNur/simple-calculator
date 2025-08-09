@@ -70,6 +70,7 @@ function reducer(state, action) {
       };
 
     case "operation/selected":
+      if (operandVal.includes(state.chainingValue.at(-1))) return state;
       if (!state.chainingValue && state.chainingMode) return state;
       if (state.chainingMode)
         return {
@@ -95,6 +96,7 @@ function reducer(state, action) {
       return {
         ...state,
         chainingMode: !state.chainingMode,
+        output: null,
       };
 
     case "delete/selected":
