@@ -13,7 +13,7 @@ body {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -125,9 +125,9 @@ button:hover {
   background-color: rgb(15, 161, 52);
   color: #fff;
 }
-@media (min-width: 1000px) {
+@media (min-width: 768px) {
   .app-container {
-    margin: 7rem auto;
+    margin: 5rem auto;
     height: auto;
   }
 }
