@@ -36,8 +36,14 @@ body {
   background-color: rgb(255, 255, 255);
   min-height: 14rem;
   height: 40%;
+  width: 100%;
 }
 .output-field p {
+  letter-spacing: 1.7;
+  line-height: 1.2;
+  text-align: right;
+  max-width: 100%;
+  overflow-wrap: break-word;
   font-size: 2rem;
   padding: 0 1rem;
 }
